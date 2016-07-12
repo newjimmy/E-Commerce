@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet id="changelog-1.0" author="Dzyombak.Igor">
+        <comment>Create products table</comment>
+        <sql>
+            CREATE TABLE products(
+            product_id SERIAL NOT NULL,
+            product_area INTEGER,
+            product_price INTEGER,
+            product_year INTEGER,
+            product_rooms_number INTEGER,
+            product_location VARCHAR(255) NOT NULL,
+            CONSTRAINT products_pk PRIMARY KEY (product_id)
+            );
+        </sql>
+
+        <rollback>
+            DROP TABLE products;
+        </rollback>
+    </changeSet>
+
+    <changeSet id="changelog-1.1" author="Dzyombak.Igor">
+        <sql>
+            INSERT INTO products (product_area, product_price, product_year, product_rooms_number, product_location)
+            VALUES (56, 50000, 1980, 2, 'Ghetto');
+            INSERT INTO products (product_area, product_price, product_year, product_rooms_number, product_location)
+            VALUES (87, 93000, 1999, 3, 'East Side');
+            INSERT INTO products (product_area, product_price, product_year, product_rooms_number, product_location)
+            VALUES (112, 97000, 2001, 3, 'West Side');
+            INSERT INTO products (product_area, product_price, product_year, product_rooms_number, product_location)
+            VALUES (300, 1000000, 2010, 5, 'Center');
+            INSERT INTO products (product_area, product_price, product_year, product_rooms_number, product_location)
+            VALUES (34, 27000, 1976, 1, 'North Side');
+            INSERT INTO products (product_area, product_price, product_year, product_rooms_number, product_location)
+            VALUES (100, 500000, 2012, 1, 'Center');
+            INSERT INTO products (product_area, product_price, product_year, product_rooms_number, product_location)
+            VALUES (76, 80000, 1997, 3, 'South Side');
+            INSERT INTO products (product_area, product_price, product_year, product_rooms_number, product_location)
+            VALUES (43, 43000, 1962, 3, 'Ghetto');
+            INSERT INTO products (product_area, product_price, product_year, product_rooms_number, product_location)
+            VALUES (115, 200000, 1991, 4, 'East Side');
+            INSERT INTO products (product_area, product_price, product_year, product_rooms_number, product_location)
+            VALUES (157, 700000, 2015, 2, 'Center');
+            INSERT INTO products (product_area, product_price, product_year, product_rooms_number, product_location)
+            VALUES (27, 15000, 1986, 1, 'East Side');
+        </sql>
+
+        <rollback>
+            DELETE FROM products WHERE product_area IN (56, 87, 112, 300, 34, 100, 76, 43, 115, 157, 27);
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

@@ -7,7 +7,6 @@
     <groupId>com.commerce</groupId>
     <artifactId>E-Commerce_DB</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
     <name>E-Commerce_DB Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
@@ -40,8 +39,8 @@
 
                 <configuration>
                     <propertyFileWillOverride>true</propertyFileWillOverride>
-                    <changeLogFile>src/resources/db.changelog/db.changelog-master.xml</changeLogFile>
-                    <propertyFile>src/resources/database.properties</propertyFile>
+                    <changeLogFile>src/main/resources/db.changelog/db.changelog-master.xml</changeLogFile>
+                    <propertyFile>src/main/resources/database.properties</propertyFile>
                 </configuration>
 
                 <executions>
