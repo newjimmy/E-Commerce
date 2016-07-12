@@ -37,6 +37,21 @@
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>
                 <version>3.4.2</version>
+
+                <configuration>
+                    <propertyFileWillOverride>true</propertyFileWillOverride>
+                    <changeLogFile>src/resources/db.changelog/db.changelog-master.xml</changeLogFile>
+                    <propertyFile>src/resources/database.properties</propertyFile>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>updateTestingRollback</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
