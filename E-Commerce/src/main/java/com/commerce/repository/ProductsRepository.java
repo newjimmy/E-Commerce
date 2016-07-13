@@ -22,12 +22,12 @@ public class ProductsRepository {
     public List<ProductsModel> getListOfAllProducts() {
         return jdbcTemplate.query(QUERY_GET_ALL_PRODUCTS, (resultSet, i) -> {
             return new ProductsModel(
-                    resultSet.getInt("productId"),
-                    resultSet.getInt("productArea"),
-                    resultSet.getInt("productPrice"),
-                    resultSet.getInt("productYear"),
-                    resultSet.getInt("productRoomsNumber"),
-                    resultSet.getString("productLocation")
+                    resultSet.getInt("product_id"),
+                    resultSet.getInt("product_area"),
+                    resultSet.getInt("product_price"),
+                    resultSet.getInt("product_year"),
+                    resultSet.getInt("product_rooms_number"),
+                    resultSet.getString("product_location")
             );
         });
     }
