@@ -19,4 +19,18 @@
             DROP TABLE categories;
         </rollback>
     </changeSet>
+
+    <changeSet id="changelog-2.1" author="Dzyombak.Igor">
+        <comment>Filling categories table</comment>
+        <sql>
+            INSERT INTO categories (category_name) VALUES ('Kiev');
+            INSERT INTO categories (category_name) VALUES ('London');
+            INSERT INTO categories (category_name) VALUES ('New York');
+            INSERT INTO categories (category_name) VALUES ('Berlin');
+        </sql>
+
+        <rollback>
+            DELETE FROM categories WHERE category_name IN ('Kiev', 'London', 'New York', 'Berlin');
+        </rollback>
+    </changeSet>
 </databaseChangeLog>
