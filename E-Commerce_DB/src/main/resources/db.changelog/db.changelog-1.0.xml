@@ -25,6 +25,7 @@
     </changeSet>
 
     <changeSet id="changelog-1.1" author="Dzyombak.Igor">
+        <comment>Filling products table</comment>
         <sql>
             INSERT INTO products (product_area, product_price, product_year, product_rooms_number, product_location)
             VALUES (56, 50000, 1980, 2, 'Ghetto');
