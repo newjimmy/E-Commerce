@@ -22,4 +22,9 @@ public class ProductsController {
         return productsService.getListOfProducts();
     }
 
+    @RequestMapping(value = "/allproducts")
+    public String getAllProductsPage() {
+        return "allProducts";
+    }
+
 }
