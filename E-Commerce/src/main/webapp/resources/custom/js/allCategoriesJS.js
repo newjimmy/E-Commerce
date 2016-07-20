@@ -18,7 +18,7 @@ var CategoriesController = function () {
         data.forEach(function (value) {
             //ints just a bit more convenient way to use jQuery
             var $row = $("<tr>");
-            $row.append($("<td>").text(value.categoryName))
+            $row.append($("<td>").text(value.categoryName));
             $tableBody.append($row);
         });
     }

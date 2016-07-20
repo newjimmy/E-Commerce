@@ -17,4 +17,8 @@ public class ProductsService {
         return productsRepository.getListOfAllProducts();
     }
 
+    public List<ProductsModel> getListOfProductsByCategoryId(int categoryId) {
+        return productsRepository.getListOfAllProductsByCategoryId(categoryId);
+    }
+
 }
