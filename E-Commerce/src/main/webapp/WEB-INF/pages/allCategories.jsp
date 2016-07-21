@@ -2,23 +2,30 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>E-Commerce. All categories table</title>
+    <title>All categories table</title>
     <script src="resources/vendor/js/jquery-2.2.2.js" type="application/javascript"></script>
     <script src="resources/custom/js/allCategoriesJS.js" type="application/javascript"></script>
+    <script src="resources/vendor/js/bootstrap.min.js"></script>
+    <link href="resources/vendor/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-Welcome to the categories page.
+<br/>
+<h3>&emsp; Welcome to the categories page</h3>
 <br/>
 <br/>
-<br/>
-<table id="Categories table" class="table table-bordered" border="1">
-    <thead>
-    <tr>
-        <th>&nbsp; Cities &nbsp;</th>
-    </tr>
-    </thead>
-    <tbody id="allCategoriesTable" align="center">
-    </tbody>
-</table>
+<div class="row">
+    <div class="col-sm-2 col-md-offset-1">
+        <p class="lead">Table of the categories</p>
+        <table id="Categories table" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th class="text-center" abbr title="A list of cities">Cities</th>
+            </tr>
+            </thead>
+            <tbody id="allCategoriesTable" align="center">
+            </tbody>
+        </table>
+    </div>
+</div>
 </body>
 </html>

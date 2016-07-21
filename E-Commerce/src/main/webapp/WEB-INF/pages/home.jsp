@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Home page</title>
+    <script src="resources/vendor/js/bootstrap.min.js"></script>
+    <link href="resources/vendor/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 </head>
 <%@ page import="java.util.Date" %>
 <body>
