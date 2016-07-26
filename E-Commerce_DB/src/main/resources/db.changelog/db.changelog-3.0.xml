@@ -52,4 +52,20 @@
             'ROLE_GUEST');
         </rollback>
     </changeSet>
+
+    <changeSet id="changelog-3.3" author="Igor.Dzyombak">
+        <comment>Create relation table users_to_roles (user_id - role_id)</comment>
+        <sql>
+            CREATE TABLE users_to_roles (
+            role_id INTEGER NOT NULL ,
+            user_id INTEGER NOT NULL ,
+            CONSTRAINT roles_fk FOREIGN KEY (role_id) REFERENCES roles (role_id),
+            CONSTRAINT users_fk FOREIGN KEY (user_id) REFERENCES users (user_id)
+            );
+        </sql>
+
+        <rollback>
+            DROP TABLE users_to_roles;
+        </rollback>
+    </changeSet>
 </databaseChangeLog>

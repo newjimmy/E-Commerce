@@ -4,6 +4,7 @@
 
 <head>
     <title>Registration page</title>
+    <script src="resources/vendor/js/jquery-2.2.2.js" type="application/javascript"></script>
     <script src="resources/vendor/js/bootstrap.min.js"></script>
     <link href="resources/vendor/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 </head>

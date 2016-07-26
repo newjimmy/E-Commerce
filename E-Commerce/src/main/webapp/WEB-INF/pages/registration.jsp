@@ -30,8 +30,6 @@
             <form:errors path="password"/>
         </div>
 
-        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-
         <button type="submit" class="btn btn-primary btn-block">Register</button>
 
     </form:form>

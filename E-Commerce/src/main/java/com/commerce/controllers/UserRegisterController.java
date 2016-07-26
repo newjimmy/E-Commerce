@@ -11,22 +11,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping(value = "/register")
 public class UserRegisterController {
 
     @Autowired
     private UserService userService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public String viewRegistration(Model model) {
         UserModel userModel = new UserModel();
         model.addAttribute("userModel", userModel);
         return "registration";
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public String submitRegistration(@ModelAttribute("userModel") UserModel userModel, BindingResult result) {
         userService.saveUserDetails(userModel);
+        return "redirect:registrationSuccess";
+    }
+
+    @RequestMapping(value = "/registrationSuccess", method = RequestMethod.GET)
+    public String viewRegistrationSuccess() {
         return "registrationSuccess";
     }
 }
