@@ -36,4 +36,20 @@
             DROP TABLE roles;
         </rollback>
     </changeSet>
+
+    <changeSet id="changelog-3.2" author="Igor.Dzyombak">
+        <comment>Fill the directory table with the different roles</comment>
+        <sql>
+            INSERT INTO roles (role_name) VALUES ('ROLE_ADMIN');
+            INSERT INTO roles (role_name) VALUES ('ROLE_EDITOR');
+            INSERT INTO roles (role_name) VALUES ('ROLE_USER');
+            INSERT INTO roles (role_name) VALUES ('ROLE_TESTER');
+            INSERT INTO roles (role_name) VALUES ('ROLE_GUEST');
+        </sql>
+
+        <rollback>
+            DELETE FROM roles WHERE role_name IN ('ROLE_ADMIN', 'ROLE_EDITOR', 'ROLE_USER', 'ROLE_TESTER',
+            'ROLE_GUEST');
+        </rollback>
+    </changeSet>
 </databaseChangeLog>
