@@ -13,7 +13,7 @@
 
 <body>
 <div class="container">
-    <form:form method="POST" modelAttribute="user" action="registration" enctype="utf8" role="form-horizontal">
+    <form:form method="POST" modelAttribute="userModel" action="registration" enctype="utf8" role="form-horizontal">
 
         <div class="form-group">
             <form:input type="text" path="username" id="username" class="form-control" placeholder="Enter username"/>
