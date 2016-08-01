@@ -11,8 +11,13 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private DictionaryService dictionaryService;
+
     public void saveUserDetails(UserModel userModel) {
-        userRepository.setUserDetails(userModel);
+        int userId = userRepository.setUserDetails(userModel);
+        int roleId = dictionaryService.getRoleId("ROLE_USER");
+        userRepository.setUserRole(roleId, userId);
     }
 
 }
