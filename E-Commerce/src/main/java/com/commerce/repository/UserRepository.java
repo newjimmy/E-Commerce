@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
@@ -28,11 +29,13 @@ public class UserRepository {
 
     public int setUserDetails(UserModel userModel) {
         KeyHolder keyHolder = new GeneratedKeyHolder();
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String hashedPassword = passwordEncoder.encode(userModel.getPassword());
         jdbcTemplate.update(con -> {
             PreparedStatement ps = con.prepareStatement(QUERY_INSERT_USER_DETAILS, new String[]{"user_id"});
             ps.setString(1, userModel.getUsername());
             ps.setString(2, userModel.getEmail());
-            ps.setString(3, userModel.getPassword());
+            ps.setString(3, hashedPassword);
             return ps;
         }, keyHolder);
         return keyHolder.getKey().intValue();

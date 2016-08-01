@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-group">
-            <form:input type="text" path="password" id="password" class="form-control" placeholder="Enter password"/>
+            <form:input type="password" path="password" id="password" class="form-control" placeholder="Enter password"/>
             <form:errors path="password"/>
         </div>
 
