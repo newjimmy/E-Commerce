@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-<html>
+<html lang="en">
 
 <head>
     <title>Registration page</title>
@@ -10,8 +9,12 @@
 </head>
 
 <body>
-<h3>Congratulations!</h3><br>
-<h4>Registration Success</h4>
+<h4>&emsp;Congratulations !</h4>
+<h5>&emsp;Registration success !</h5>
+<br>
+<div class="col-sm-12">
+    <h5><a href="login">Please, sign in</a></h5>
+</div>
 </body>
 
 </html>

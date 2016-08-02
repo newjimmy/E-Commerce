@@ -1,7 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
+<%@page session="true" %>
+
 <html lang="en">
+
 <head>
     <title>Login page</title>
     <script src="resources/vendor/js/jquery-2.2.2.js" type="application/javascript"></script>
@@ -11,13 +13,15 @@
 </head>
 
 <body>
-
+<br/>
+<br/>
+<br/>
 <div id="mainWrapper">
     <div class="login-container">
         <div class="login-card">
-            <div class="login-form">
+            <div class="login-form" style="width:400px; margin:0 auto;">
                 <c:url var="loginUrl" value="/login"/>
-                <form action="${loginUrl}" method="post" class="form-horizontal">
+                <form action="${loginUrl}" method="POST" class="form-horizontal">
                     <c:if test="${param.error != null}">
                         <div class="alert alert-danger">
                             <p>Invalid username and password.</p>
@@ -30,7 +34,8 @@
                     </c:if>
                     <div class="input-group input-sm">
                         <label class="input-group-addon" for="username"><i class="fa fa-user"></i></label>
-                        <input type="text" class="form-control" id="username" name="ssoId" placeholder="Enter Username"
+                        <input type="text" class="form-control" id="username" name="username"
+                               placeholder="Enter Username"
                                required>
                     </div>
                     <div class="input-group input-sm">
@@ -39,7 +44,7 @@
                                placeholder="Enter Password" required>
                     </div>
 
-                    <input type="hidden" name="${_csrf.parameterName}"   value="${_csrf.token}" />
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
                     <div class="form-actions">
                         <input type="submit"
@@ -50,7 +55,6 @@
         </div>
     </div>
 </div>
-
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<html>
+<html lang="en">
 
 <head>
     <title>Registration page</title>
@@ -12,7 +12,10 @@
 </head>
 
 <body>
-<div class="container">
+<br/>
+<br/>
+<br/>
+<div class="container" style="width:400px; margin:0 auto;">
     <form:form method="POST" modelAttribute="userModel" action="registration" enctype="utf8" role="form-horizontal">
 
         <div class="form-group">
