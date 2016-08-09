@@ -42,6 +42,7 @@
                 <th class="text-center" abbr title="building year">Year</th>
                 <th class="text-center" abbr title="rooms number">Rooms</th>
                 <th class="text-center" abbr title="location relative to the city center">Location</th>
+                <th class="text-center" abbr title="Apartments description">Description</th>
             </tr>
             </thead>
             <tbody id="productsByCategoryId" align="center"></tbody>

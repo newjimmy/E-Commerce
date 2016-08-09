@@ -4,6 +4,7 @@
 
 <head>
     <title>Home page</title>
+    <script src="resources/vendor/js/jquery-2.2.2.js" type="application/javascript"></script>
     <script src="resources/vendor/js/bootstrap.min.js"></script>
     <link href="resources/vendor/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -23,6 +24,11 @@
 <br>
 <div class="col-sm-6">
     <h5><a href="byid">Categories by products</a></h5>
+</div>
+<br>
+<br>
+<div class="col-sm-6">
+    <h5><a href="addproduct">Add new product</a></h5>
 </div>
 <br>
 <br>

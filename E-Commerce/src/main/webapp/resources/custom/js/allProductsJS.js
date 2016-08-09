@@ -11,7 +11,8 @@ var ProductsController = function () {
                 .append($("<td>").text(value.productPrice))
                 .append($("<td>").text(value.productYear))
                 .append($("<td>").text(value.productRoomsNumber))
-                .append($("<td>").text(value.productLocation));
+                .append($("<td>").text(value.productLocation))
+                .append($("<td>").text(value.productDescription));
             $tableBody.append($row);
         });
     }

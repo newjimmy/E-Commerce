@@ -10,6 +10,12 @@ var CategoriesController = function () {
             $row.append($("<td>").text(value.categoryName));
             $tableBody.append($row);
         });
+
+        var $selectBody = $("#categories");
+        data.forEach(function(value) {
+            var $s = '<option value="' + value.categoryId + '">' + value.categoryName + '</option>';
+            $selectBody.append($s);
+        })
     }
 
     function loadData() {

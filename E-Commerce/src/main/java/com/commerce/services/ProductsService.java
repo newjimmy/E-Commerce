@@ -21,4 +21,8 @@ public class ProductsService {
         return productsRepository.getListOfAllProductsByCategoryId(categoryId);
     }
 
+    public void setNewProduct(ProductsModel productsModel) {
+        productsRepository.addProduct(productsModel);
+    }
+
 }

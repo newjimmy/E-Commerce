@@ -4,6 +4,7 @@ import com.commerce.models.ProductsModel;
 import com.commerce.services.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,4 +39,18 @@ public class ProductsController {
     public String getAllProductsByCategoryId() {
         return "allCategoriesById";
     }
+
+    @RequestMapping(value = "/addproduct", method = RequestMethod.GET)
+    public String viewAddProduct(Model model) {
+        ProductsModel productsModel = new ProductsModel();
+        model.addAttribute("productsModel", productsModel);
+        return "uploadProducts";
+    }
+
+    @RequestMapping(value = "/addproduct", method = RequestMethod.POST)
+    public String submitAddProduct(ProductsModel productsModel) {
+        productsService.setNewProduct(productsModel);
+        return "uploadSuccess";
+    }
+
 }

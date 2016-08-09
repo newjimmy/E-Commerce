@@ -55,4 +55,15 @@
             DELETE FROM products WHERE product_area IN (56, 87, 112, 300, 34, 100, 76, 43, 115, 157, 27);
         </rollback>
     </changeSet>
+
+    <changeSet id="changelog-1.2" author="Dzyombak.Igor">
+        <comment>Update products table. Add product_description column</comment>
+        <sql>
+            ALTER TABLE products ADD COLUMN product_description VARCHAR(255);
+        </sql>
+
+        <rollback>
+            ALTER TABLE products DROP COLUMN product_description;
+        </rollback>
+    </changeSet>
 </databaseChangeLog>
