@@ -33,6 +33,11 @@
 <br>
 <br>
 <div class="col-sm-6">
+    <h5><a href="file">Download file</a></h5>
+</div>
+<br>
+<br>
+<div class="col-sm-6">
     <h6><a href="<c:url value="/logout" />">Logout</a></h6>
 </div>
 

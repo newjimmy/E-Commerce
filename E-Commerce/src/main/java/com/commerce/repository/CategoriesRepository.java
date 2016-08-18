@@ -25,4 +25,5 @@ public class CategoriesRepository {
                 resultSet.getString("category_name")
         ));
     }
+
 }

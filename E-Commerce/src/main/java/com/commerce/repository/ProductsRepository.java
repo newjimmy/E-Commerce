@@ -20,7 +20,7 @@ public class ProductsRepository {
     private static final String QUERY_GET_ALL_PRODUCTS = "SELECT product_id, product_area, product_price, product_year,product_rooms_number, product_location, product_description FROM products";
     private static final String QUERY_GET_ALL_PRODUCTS_BY_CATEGORY_ID = "SELECT product_id, product_area, product_price, product_year,product_rooms_number, product_location, product_description FROM products WHERE category_id=?";
     private static final String QUERY_INSERT_NEW_PRODUCT = "INSERT INTO products (product_area, product_price, product_year, product_rooms_number, product_location, product_description, category_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
-
+    private static final String QUERY_GET_INFO_FOR_FILE = "SELECT product_location, product_price, product_description FROM products WHERE category_id=?;";
 
     public List<ProductsModel> getListOfAllProducts() {
         return jdbcTemplate.query(QUERY_GET_ALL_PRODUCTS, (resultSet, i) -> new ProductsModel(
@@ -57,6 +57,16 @@ public class ProductsRepository {
             ps.setString(6, productsModel.getProductDescription());
             ps.setInt(7, productsModel.getCategoryId());
         });
+    }
+
+    public List<ProductsModel> getProductsByCategoryIdForFile(int categoryIdForFile) {
+        return jdbcTemplate.query(QUERY_GET_INFO_FOR_FILE, preparedStatement -> preparedStatement.setInt(1, categoryIdForFile),
+                ((resultSet, i) -> new ProductsModel(
+                        resultSet.getString("product_location"),
+                        resultSet.getInt("product_price"),
+                        resultSet.getString("product_description")
+                ))
+        );
     }
 
 }

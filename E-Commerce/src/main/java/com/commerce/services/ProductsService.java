@@ -25,4 +25,8 @@ public class ProductsService {
         productsRepository.addProduct(productsModel);
     }
 
+    public List<ProductsModel> getListOfProductsByCategoryIdForFile(int categoryIdNew) {
+        return productsRepository.getProductsByCategoryIdForFile(categoryIdNew);
+    }
+
 }

@@ -25,6 +25,11 @@ public class ProductsModel {
 
     }
 
+    public ProductsModel(String productLocation, int productPrice, String productDescription) {
+        this.productLocation = productLocation;
+        this.productPrice = productPrice;
+        this.productDescription = productDescription;
+    }
 
     public int getCategoryId() {
         return categoryId;
